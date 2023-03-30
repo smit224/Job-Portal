@@ -31,10 +31,7 @@ const LoginPage = () => {
           </h1>
           <form className="mt-6">
             <div className="mb-2">
-              <label
-                for="email"
-                className="block text-sm font-semibold text-gray-800"
-              >
+              <label className="block text-sm font-semibold text-gray-800">
                 Email
               </label>
               <input
@@ -47,10 +44,7 @@ const LoginPage = () => {
               />
             </div>
             <div className="mb-2">
-              <label
-                for="password"
-                className="block text-sm font-semibold text-gray-800"
-              >
+              <label className="block text-sm font-semibold text-gray-800">
                 Password
               </label>
               <input
@@ -77,8 +71,7 @@ const LoginPage = () => {
           </form>
 
           <p className="mt-8 text-xs font-light text-center text-gray-700">
-            {" "}
-            Don't have an account?{" "}
+            Don't have an account?
             <Link
               to="/register"
               className="font-medium text-green-600 hover:underline"

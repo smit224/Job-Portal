@@ -22,7 +22,7 @@ function getUserDataFromReq(req) {
 }
 
 const registration = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, userType } = req.body;
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
   try {
@@ -30,6 +30,7 @@ const registration = async (req, res) => {
       name,
       email,
       password: hash,
+      user_type: userType,
     });
 
     const token = createToken(user._id);

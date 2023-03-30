@@ -9,15 +9,13 @@ const UserContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (!user) {
-      const { data } = axios.get("/profile").then(({ data }) => {
+      axios.get("/profile").then(({ data }) => {
         console.log("___user Context Data____", data);
         setUser(data);
         setReady(true);
       });
     }
   }, []);
-
-  // console.log("Authentication State: ", state);
 
   return (
     <UserContext.Provider value={{ user, setUser, ready }}>

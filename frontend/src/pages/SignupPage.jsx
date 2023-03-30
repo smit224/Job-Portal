@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
@@ -7,6 +7,8 @@ const SignupPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userType, setUserType] = useState("");
+  const [redirect, setRedirect] = useState(false)
 
   const registerUser = (e) => {
     e.preventDefault();
@@ -16,10 +18,13 @@ const SignupPage = () => {
         name,
         email,
         password,
+        userType,
       })
       .then((response) => {
         console.log("-=Register response-=-=-=-", response);
         if (response.status === 200 || response.status === 201) {
+        //   <Navigate to="/" />;
+        setRedirect(true)
           console.log("Login Successful");
         }
       })
@@ -27,6 +32,10 @@ const SignupPage = () => {
         console.log("Just console things");
       });
   };
+
+  if(redirect){
+    return <Navigate to={"/login"} />;
+  }
 
   return (
     <div className="">
@@ -36,12 +45,9 @@ const SignupPage = () => {
           <h1 className="text-3xl font-semibold text-center text-green-700 underline">
             Sign up
           </h1>
-          <form className="mt-6">
+          <form className="mt-6" onSubmit={registerUser}>
             <div className="mb-2">
-              <label
-                for="name"
-                className="block text-sm font-semibold text-gray-800"
-              >
+              <label className="block text-sm font-semibold text-gray-800">
                 Name
               </label>
               <input
@@ -57,10 +63,7 @@ const SignupPage = () => {
               />
             </div>
             <div className="mb-2">
-              <label
-                for="email"
-                className="block text-sm font-semibold text-gray-800"
-              >
+              <label className="block text-sm font-semibold text-gray-800">
                 Email
               </label>
               <input
@@ -75,10 +78,7 @@ const SignupPage = () => {
               />
             </div>
             <div className="mb-2">
-              <label
-                for="password"
-                className="block text-sm font-semibold text-gray-800"
-              >
+              <label className="block text-sm font-semibold text-gray-800">
                 Password
               </label>
               <input
@@ -93,12 +93,28 @@ const SignupPage = () => {
                 className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md"
               />
             </div>
-            <a href="#" className="text-xs text-green-600 hover:underline">
-              Forget Password?
-            </a>
+            <div className="mt-6">
+              {/* <Select
+                className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md"
+                options={options}
+              /> */}
+              <label className="block text-sm font-semibold text-gray-800">
+                You are
+              </label>
+              <select
+                onChange={(e) => {
+                  setUserType(e.target.value);
+                }}
+                className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md"
+              >
+                <option>Please Select</option>
+                <option value="job_seeker">Job Seeker</option>
+                <option value="employer">Employer</option>
+              </select>
+            </div>
             <div className="mt-6">
               <button
-                onClick={registerUser}
+                // onClick={registerUser}
                 className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600"
               >
                 Register
