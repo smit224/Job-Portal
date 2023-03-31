@@ -7,6 +7,7 @@ import { Navigate } from "react-router-dom";
 
 import axios from "axios";
 import { useContext } from "react";
+import JobForm from "./components/JobForm";
 
 axios.defaults.baseURL = "http://localhost:8001";
 axios.defaults.withCredentials = true;
@@ -27,6 +28,10 @@ function App() {
           <Route
             path="/register"
             element={!user ? <SignupPage /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/add_job"
+            element={!user ? <LoginPage /> : <JobForm />}
           />
         </Routes>
       </BrowserRouter>

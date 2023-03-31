@@ -18,26 +18,15 @@ const Header = () => {
 
   return (
     <>
-      <nav className="dark:bg-gray-900 w-full">
+      <nav className="bg-gray-900 w-full">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="https://flowbite.com/" className="flex gap-3">
             <img src={Logo} className="h-12" alt="Logo" />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
               Job Portal
             </span>
           </a>
           <div className="flex text-white text-xl">
-            <ul className="flex flex-col py-4 mr-8 ">
-              <li>
-                <a
-                  href="#"
-                  className="dark:hover:text-green-700"
-                  aria-current="page"
-                >
-                  Home
-                </a>
-              </li>
-            </ul>
             {!user && (
               <Link
                 to="/login"
@@ -48,12 +37,32 @@ const Header = () => {
               </Link>
             )}
             {user && (
-              <button
-                onClick={handleLogout}
-                className="py-4 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg px-4 text-center md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-              >
-                Logout
-              </button>
+              <>
+                <ul className="flex py-4 mr-8  items-center gap-5 text-white">
+                  <li>
+                    <Link to={"/"} className=" hover:text-green-700">
+                      Home
+                    </Link>
+                  </li>
+                  {user.user_type === "employer" && (
+                    <>
+                      <li>
+                        <Link to={"/add_job"} className="hover:text-green-700 ">
+                          Add Job
+                        </Link>
+                      </li>
+                    </>
+                  )}
+                  <li>
+                    <button
+                      onClick={handleLogout}
+                      className="py-4 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg px-4 text-center text-white md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                    >
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              </>
             )}
           </div>
         </div>
