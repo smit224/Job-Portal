@@ -20,12 +20,12 @@ const Header = () => {
     <>
       <nav className="bg-gray-900 w-full">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="https://flowbite.com/" className="flex gap-3">
+          <Link to="/" className="flex gap-3">
             <img src={Logo} className="h-12" alt="Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
               Job Portal
             </span>
-          </a>
+          </Link>
           <div className="flex text-white text-xl">
             {!user && (
               <Link
