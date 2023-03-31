@@ -15,11 +15,6 @@ const JobForm = () => {
     j_description: description,
   });
 
-  const onchangeDescription = (e) => {
-    console.log("-=-=-eee-=-=-=", e);
-    setCommon({ ...common, cstate: e.target.value });
-  };
-
   const handleOnchange = (e) => {
     setJob({ ...job, [e.target.name]: e.target.value });
   };
