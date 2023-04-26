@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.activejobs.active {
+  border: 1px solid #2c79e8;
+}
+
+.job_desc > ul {
+  list-style: disc outside none;
+}
+
+.job_desc > ul > li {
+  margin-top: 1rem;
+}
+
+.job_desc > p {
+  margin-top: 1rem;
+}
+
+.ck.ck-content {
+  height: 15rem;
+}
+
+input.rti--container {
+  appearance: none;
+  display: flex;
+  width: 100%;
+  background: white;
+  color: rgb(55 65 81);
+  /* border: 1px solid rgb(55 65 81); */
+  border-radius: 25px;
+  padding: 6px 16px 6px 16px;
+  /* margin-bottom: 12px; */
+  align-items: center;
+  justify-content: center;
+}
+
+input.rti--input:focus {
+  outline-style: none;
+  border-color: rgb(55 65 81);
+}
+
+/* appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500 */
