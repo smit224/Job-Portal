@@ -5,11 +5,11 @@ const JobSchema = new Schema({
   j_title: String,
   j_description: String,
   j_type: String,
-  j_categories: String,
+  j_category: String,
   j_location: String,
   j_salary_range: String,
-  j_responsibility: String,
-  j_requirements: String,
+  company_id: { type: mongoose.Schema.Types.ObjectId, ref: "Company" },
+  j_skills: [String],
   j_applicant: Number,
 });
 

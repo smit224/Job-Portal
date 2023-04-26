@@ -21,7 +21,9 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
     "react-select": "^5.7.2",
-    "tailwind": "^4.0.0"
+    "react-tag-input-component": "^2.0.2",
+    "tailwind": "^4.0.0",
+    "tw-elements": "^1.0.0-beta2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

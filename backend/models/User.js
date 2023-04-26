@@ -6,6 +6,10 @@ const UserSchema = new Schema({
   email: { type: String, unique: true },
   password: String,
   user_type: String,
+  phone: Number,
+  linkedInURL: String,
+  job_role: String,
+  gender: String,
 });
 
 const UserModel = mongoose.model("Users", UserSchema);
