@@ -15,8 +15,7 @@ import YourJobs from "./pages/YourJobs";
 import UpdatePassword from "./pages/UpdatePassword";
 import UserInfo from "./pages/UserInfo";
 
-// axios.defaults.baseURL = "http://localhost:8001";
-axios.defaults.baseURL = "https://jobportal-yxdh.onrender.com";
+axios.defaults.baseURL = "http://localhost:8001";
 axios.defaults.withCredentials = true;
 
 function App() {

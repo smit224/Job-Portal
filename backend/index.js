@@ -18,8 +18,7 @@ app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
 app.use(
   cors({
     credentials: true,
-    // origin: "http://localhost:5173",
-    origin: "https://644f150001e738318e520fc3--polite-praline-ba5f18.netlify.app"
+    origin: "http://localhost:5173",
   })
 );
 

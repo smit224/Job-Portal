@@ -86,12 +86,8 @@ function AppliedJobModal({
                           <span class="material-symbols-outlined">article</span>
                           <a
                             className=""
-                            // href={
-                            //   "http://localhost:8001/uploads/" +
-                            //   singleApplicant.a_resume?.[0]
-                            // }
                             href={
-                              "https://jobportal-yxdh.onrender.com" +
+                              "http://localhost:8001/uploads/" +
                               singleApplicant.a_resume?.[0]
                             }
                             target="_blank"
@@ -129,6 +125,7 @@ function AppliedJobModal({
                           name={singleApplicant._id}
                           onChange={handleSelectChange}
                         >
+                          
                           <option value="New">New</option>
                           <option value="Interview">Interview</option>
                           <option value="Offer">Offer</option>
@@ -137,10 +134,7 @@ function AppliedJobModal({
                       </div>
                     </>
                   )}
-                  <button
-                    className="bg-[#60B3ED] w-full p-4 text-white rounded-md mt-5 hover:bg-[#2C79E8] text-lg"
-                    onClick={() => window.location.reload()}
-                  >
+                  <button className="bg-[#60B3ED] w-full p-4 text-white rounded-md mt-5 hover:bg-[#2C79E8] text-lg" onClick={() => window.location.reload()}>
                     Update
                   </button>
                 </div>
