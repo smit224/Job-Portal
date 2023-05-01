@@ -7,8 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build-css": "tailwindcss build -i ./src/styles.css -o ./public/styles.css --watch",
-    "start": "production"
+    "start": "production",
+    "build-css": "tailwindcss build -i ./src/styles.css -o ./public/styles.css --watch"
+    
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^36.0.1",
