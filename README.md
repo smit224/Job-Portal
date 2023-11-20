@@ -9,7 +9,7 @@ The job portal web application includes the following features:
 ### For Job Seekers
 
 - Job search: Job seekers can search for job opportunities based on various criteria such as location, job type, salary, etc.
-- Resume builder: Job seekers can create and upload their resumes to the system to apply for job vacancies.
+- Resume builder: Job seekers can upload their resumes to the system to apply for job vacancies.
 - Apply for jobs: Job seekers can apply for job vacancies through the web application.
 - Job alerts: Job seekers can set up job alerts to receive notifications about new job opportunities that match their criteria.
 
@@ -38,5 +38,5 @@ To install the job portal web application on your local machine, follow these st
 
 ## Conclusion
 
-The job portal web application built using the MERN stack is an efficient way for job seekers and employers to find what they want. The project is built using modern web technologies and follows best practices in web development. If you have any questions or feedback, feel free to contact us.
+The job portal web application built using the MERN stack is an efficient way for job seekers and employers to find what they want. The project is built using modern web technologies and follows best practices in web development. If you have any questions or feedback, feel free to contact me.
 
